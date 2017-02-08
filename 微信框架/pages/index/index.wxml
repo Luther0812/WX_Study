@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view>
+  <view>
+    Hello {{name}}!
+  </view>
+  <button bindtap="changeName">
+    Click Me !
+  </button>
+  <view>{{text}}</view>
+  <button bindtap="changeText"> Change normal data </button>
+  <view>{{array[0].text}}</view>
+  <button bindtap="changeItemInArray"> Change Array data </button>
+  <view>{{object.text}}</view>
+  <button bindtap="changeItemInObject"> Change Object data </button>
+  <view>{{newField.text}}</view>
+  <button bindtap="addNewField"> Add new data </button>
+  <button bindtap="helloCommon"> helloCommon </button>
+  <button bindtap="googbayCommon"> googbayCommon </button>
+  <view wx:key="{{array}}"> {{item.text}} </view>
+  <view wx:if="{{view == 'WEBVIEW'}}"> WEBVIEW </view>
+  <view wx:elif="{{view == 'APP'}}"> APP </view>
+  <view wx:else="{{view == 'MINE'}}"> MINE </view>
+  <template name="staffName">
+  <view>
+    FirstName: {{firstName}}, LastName: {{lastName}}
+  </view>
+  </template>
+
+  <template is="staffName" data="{{...staffA}}"></template>
+  <template is="staffName" data="{{...staffB}}"></template>
+  <template is="staffName" data="{{...staffC}}"></template>
+  <view bindtap="add"> {{count}} </view>
+</view>
